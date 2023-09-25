@@ -1,0 +1,31 @@
+<div>
+  <h1>Setting</h1>
+</div>
+<div>
+  <div *ngFor="let rotor of $enigmaSetting().rotors; index as idx">
+    <label>
+      Rotor {{idx + 1}}
+    </label>
+    <label>
+      Scrambler
+    </label>
+    <select
+      [selectedIndex]="rotor.scramblerId"
+      (change)="setScramblerId(idx, $event)"
+    >
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <label>
+      Initial Rotate
+    </label>
+    <input
+      type="number"
+      min="0"
+      max="25"
+      [ngModel]="rotor.initialRotate"
+      (change)="setInitialState(idx, $event)"
+    >
+  </div>
+</div>

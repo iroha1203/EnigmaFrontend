@@ -1,0 +1,15 @@
+<div>
+  <h1>Input</h1>
+</div>
+<div>
+  <label>
+    Message
+  </label>
+  <input type="text"
+         [ngModel]="$message()"
+         (ngModelChange)="$message.set($event)"
+  >
+  <button (click)="sendButton.emit()">
+    SEND
+  </button>
+</div>
